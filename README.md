@@ -1,22 +1,18 @@
 # TorsAI
 
-A personal coding assistant you can run and customize. It opens a chat app in your browser and talks only to Ollama on this same computer (`127.0.0.1`). Prompts are processed by the model on your laptop; this project does not call a hosted AI service.
+A personal coding assistant you can run and customize. It opens a chat app in your browser and talks only to Ollama on your computer. Prompts are processed by the model on your laptop; this project does not call a hosted AI service. This was made on Linux Mint.
 
 ## Get started
 
 1. Install [Node.js 18 or newer](https://nodejs.org/) and [Ollama](https://ollama.com/download).
 2. While online, download the model once and start it:
 
-   ```sh
-   ollama run qwen2.5-coder:7b
-   ```
+
 
    Wait for the model to finish downloading. After that, Ollama runs the model locally; you can exit Ollama's chat with `/bye`. The default model download is about 4.7 GB. [Ollama model details](https://ollama.com/library/qwen2.5-coder)
 3. In this project folder, start your assistant. It will open the app in your browser:
 
-   ```sh
-   npm start
-   ```
+npm start
 
    Keep the terminal window open while using TorsAI. Press `Ctrl+C` there to close the app.
 
@@ -26,11 +22,8 @@ Open `ai.js` and change `ASSISTANT_NAME` and `SYSTEM_PROMPT` to give it your nam
 
 To use another Ollama model, set `CODING_AI_MODEL` before starting it:
 
-```sh
-CODING_AI_MODEL=qwen2.5-coder:3b npm start
-```
 
-The app suggests code and explains fixes, but it does not open or edit project files on its own. It listens only on your computer at `http://127.0.0.1:4317`.
+The app suggests code and explains fixes, but it does not open or edit project files on its own. It listens only on your computer.
 
 ## What "local" means
 
