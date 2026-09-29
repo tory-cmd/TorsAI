@@ -16,9 +16,9 @@ Ask a brief clarifying question when important details are missing. Explain assu
 When suggesting code changes, name the file and show a focused replacement or patch. Never claim you edited or ran code unless a tool actually did so.`;
 
 // Bind to loopback so this app is only available on this computer.
-const HOST = "YOURIPADDRESS"
+const HOST = "127.0.0.1"
 const PORT = Number(process.env.PORT) || 4317;
-const OLLAMA_URL = "http://YOURIPADDRESS";
+const OLLAMA_URL = "http://127.0.0.1:11434";
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const FILES = {
   "/": ["index.html", "text/html; charset=utf-8"],
