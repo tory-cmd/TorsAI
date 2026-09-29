@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111318" />
+    <title>TorsAI — Your Coding Assistant</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-row">
+          <div class="brand-mark" aria-hidden="true">T<span>.</span></div>
+          <div class="brand-name">TorsAI<span>PERSONAL CODING AI</span></div>
+          <button class="icon-button mobile-close" id="closeSidebar" aria-label="Close sidebar">×</button>
+        </div>
+
+        <button class="new-chat" id="newChat"><span>＋</span> New chat <kbd>Ctrl K</kbd></button>
+
+        <div class="sidebar-section-label">YOUR WORKSPACE</div>
+        <div class="workspace-card">
+          <div class="workspace-icon">&lt;/&gt;</div>
+          <div><strong>Personal space</strong><span>Private on this device</span></div>
+          <span class="local-dot" title="Local"></span>
+        </div>
+
+        <div class="sidebar-spacer"></div>
+
+        <div class="model-card">
+          <div class="model-card-top"><span class="pulse-dot" id="modelDot"></span><span id="modelState">Checking local model</span></div>
+          <div class="model-name" id="modelName">qwen2.5-coder:7b</div>
+          <div class="model-caption" id="modelCaption">Runs on your laptop</div>
+        </div>
+        <div class="sidebar-footer"><span class="lock-icon">▣</span> Local and private <span class="footer-version">v1.0</span></div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <button class="icon-button menu-button" id="openSidebar" aria-label="Open sidebar">☰</button>
+          <div class="breadcrumb"><span>TorsAI</span><span class="crumb-divider">/</span><strong>New chat</strong></div>
+          <div class="topbar-right"><span class="topbar-local"><span class="local-dot"></span> LOCAL MODE</span><button class="icon-button" id="clearChat" title="Clear conversation" aria-label="Clear conversation">⌫</button></div>
+        </header>
+
+        <section class="chat-scroll" id="chatScroll">
+          <div class="welcome" id="welcome">
+            <div class="welcome-orb"><span>&lt;/&gt;</span><i></i></div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> YOUR PERSONAL CODING PARTNER <span class="eyebrow-line"></span></div>
+            <h1>What are we<br /><span>building today?</span></h1>
+            <p class="welcome-copy">Ask a question, work through a bug, or start something new.<br />Your assistant runs right here on your computer.</p>
+            <div class="suggestions">
+              <button class="suggestion" data-prompt="Help me understand a piece of code. What should I share with you?"><span class="suggestion-icon purple">⌘</span><span><strong>Explain some code</strong><small>Make a tricky concept click</small></span><span class="suggestion-arrow">↗</span></button>
+              <button class="suggestion" data-prompt="Help me debug a problem. Ask me for the error and the relevant code."><span class="suggestion-icon orange">⌕</span><span><strong>Track down a bug</strong><small>Find the issue, fix it together</small></span><span class="suggestion-arrow">↗</span></button>
+              <button class="suggestion" data-prompt="I want to build a small project. Help me plan the first steps."><span class="suggestion-icon blue">✳</span><span><strong>Start a project</strong><small>Turn an idea into a first step</small></span><span class="suggestion-arrow">↗</span></button>
+            </div>
+          </div>
+          <div class="messages" id="messages" aria-live="polite"></div>
+        </section>
+
+        <div class="composer-wrap">
+          <form class="composer" id="composer">
+            <textarea id="prompt" rows="1" placeholder="Ask TorsAI anything about code…" aria-label="Message TorsAI"></textarea>
+            <div class="composer-bottom"><div class="composer-hint"><span class="sparkle">✦</span> Your code stays on this device <span class="hint-separator">·</span> <kbd>↵</kbd> to send</div><button class="send-button" id="sendButton" type="submit" aria-label="Send message"><span>↑</span></button></div>
+          </form>
+          <div class="bottom-note">TorsAI can make mistakes. Review code before using it.</div>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
